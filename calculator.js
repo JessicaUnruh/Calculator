@@ -3,27 +3,44 @@
 // all can be used interchangeably
 // user can input number only
 // check for if input is number; if not they must re-enter the input
-var number = 0, buttonPress, operationButton, result;
-console.log(5 / 2);
-function caculateExpression(number) {
+var number = 0, numberButton, operationButton, result;
+function setNumber(input) {
+    console.log("pressed " + input);
+    console.log(typeof numberButton);
+    numberButton = input;
+    console.log(typeof numberButton);
+}
+function setOperator(input) {
+    console.log("pressed " + input);
+    console.log(typeof operationButton);
+    operationButton = input;
+    console.log(typeof operationButton);
+}
+function caculateExpression(numberButton, operationButton) {
+    // result is what is saved
+    // new expression means result is 0
+    // continued expression means result is some number
+    // result == result + numberButton
+    // numberButton is pressed button with a number value
+    // say we have multiple values to add
+    // we need to add continuously as "Add" button is pressed
+    // 0 + 5 = 5 + 5 = 10 + 2 = 12, etc.
+    // r + nB = r + nB = r + nB = r, etc.
+    // we're taking in two parameters: numberButton and operationButton
+    // numberButton tells us what number to operate with
+    // operationButton tells us what to do with our numbers
     switch (operationButton) {
         case operationButton = "add":
-            result == number + buttonPress;
+            result == number + numberButton;
+            console.log(result);
         case operationButton = "subtract":
-            result == number - buttonPress;
+            result == number - numberButton;
+            console.log(result);
         case operationButton = "multiply":
-            result == number * buttonPress;
+            result == number * numberButton;
+            console.log(result);
         case operationButton = "divide":
-            result == number / buttonPress;
+            result == number / numberButton;
+            console.log(result);
     }
-}
-function subCalc(number) {
-}
-function multiplyCalc(number) {
-}
-function divideCalc(number) {
-}
-function equalsCalc(number) {
-}
-function clearCalc(number) {
 }
