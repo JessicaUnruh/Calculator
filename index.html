@@ -28,43 +28,44 @@
     <main class="container">
         <section class="row justify-content-center">
             <!-- need to add responsive rules for mobile adjustment -->
-            <div class="col-2 d-flex justify-content-center border border-dark p-2">Display window</div>
+            <div id="displayWindow" class="col-2 d-flex justify-content-center border border-dark p-2">Display window</div>
         </section>
+
 
         <section class="row">
             <div class="col-12 d-flex justify-content-center">
-                <button onclick="setOperator('clear')" type="button" class="btn btn-dark btn-width btn-lg m-1"><i class="fa-solid fa-c"></i></button>
-                <button onclick="setOperator('left_parenthesis')" type="button" class="btn btn-dark btn-width btn-lg m-1">(</button>
-                <button onclick="setOperator('right_parenthesis')" type="button" class="btn btn-dark btn-width btn-lg m-1">)</button>
-                <button onclick="setOperator('divide')" type="button" class="btn btn-dark btn-width btn-lg m-1"><i class="fa-solid fa-divide"></i></button>
+                <button onclick="collectInput('clear')" type="button" class="btn btn-dark btn-width btn-lg m-1"><i class="fa-solid fa-c"></i></button>
+                <button onclick="collectInput('left_parentheses')" type="button" class="btn btn-dark btn-width btn-lg m-1">(</button>
+                <button onclick="collectInput('right_parentheses')" type="button" class="btn btn-dark btn-width btn-lg m-1">)</button>
+                <button onclick="collectInput('divide')" type="button" class="btn btn-dark btn-width btn-lg m-1"><i class="fa-solid fa-divide"></i></button>
             </div>
 
             <div class="col-12 d-flex justify-content-center">
-                <button onclick="setNumber(7)" type="button" class="btn btn-dark btn-width btn-lg m-1">7</button>
-                <button onclick="setNumber(8)" type="button" class="btn btn-dark btn-width btn-lg m-1">8</button>
-                <button onclick="setNumber(9)" type="button" class="btn btn-dark btn-width btn-lg m-1">9</button>
-                <button onclick="setOperator('multiply')" type="button" class="btn btn-dark btn-width btn-lg m-1">x</button>
+                <button onclick="collectInput(7)" type="button" class="btn btn-dark btn-width btn-lg m-1">7</button>
+                <button onclick="collectInput(8)" type="button" class="btn btn-dark btn-width btn-lg m-1">8</button>
+                <button onclick="collectInput(9)" type="button" class="btn btn-dark btn-width btn-lg m-1">9</button>
+                <button onclick="collectInput('multiply')" type="button" class="btn btn-dark btn-width btn-lg m-1">x</button>
             </div>
 
             <div class="col-12 d-flex justify-content-center">
-                <button onclick="setNumber(4)" type="button" class="btn btn-dark btn-width btn-lg m-1">4</button>
-                <button onclick="setNumber(5)" type="button" class="btn btn-dark btn-width btn-lg m-1">5</button>
-                <button onclick="setNumber(6)" type="button" class="btn btn-dark btn-width btn-lg m-1">6</button>
-                <button onclick="setOperator('subtract')" type="button" class="btn btn-dark btn-width btn-lg m-1">-</button>
+                <button onclick="collectInput(4)" type="button" class="btn btn-dark btn-width btn-lg m-1">4</button>
+                <button onclick="collectInput(5)" type="button" class="btn btn-dark btn-width btn-lg m-1">5</button>
+                <button onclick="collectInput(6)" type="button" class="btn btn-dark btn-width btn-lg m-1">6</button>
+                <button onclick="collectInput('subtract')" type="button" class="btn btn-dark btn-width btn-lg m-1">-</button>
             </div>
 
             <div class="col-12 d-flex justify-content-center">
-                <button onclick="setNumber(1)" value="1" type="button" class="btn btn-dark btn-width btn-lg m-1">1</button>
-                <button onclick="setNumber(2)" type="button" class="btn btn-dark btn-width btn-lg m-1">2</button>
-                <button onclick="setNumber(3)" type="button" class="numbersGroup btn btn-dark btn-width btn-lg m-1">3</button>
-                <button onclick="setOperator('add')" type="button" class="operationsGroup btn btn-dark btn-width btn-lg m-1">+</button>
+                <button onclick="collectInput(1)" value="1" type="button" class="btn btn-dark btn-width btn-lg m-1">1</button>
+                <button onclick="collectInput(2)" type="button" class="btn btn-dark btn-width btn-lg m-1">2</button>
+                <button onclick="collectInput(3)" type="button" class="numbersGroup btn btn-dark btn-width btn-lg m-1">3</button>
+                <button onclick="collectInput('add')" type="button" class="operationsGroup btn btn-dark btn-width btn-lg m-1">+</button>
             </div>
 
             <div class="col-12 d-flex justify-content-center">
-                <button onclick="setOperator('percentage')" type="button" class="btn btn-dark btn-width btn-lg m-1">%</button>
-                <button onclick="setNumber(0)" type="button" class="btn btn-dark btn-width btn-lg m-1">0</button>
-                <button onclick="setOperator('dot')" type="button" class="btn btn-dark btn-width btn-lg m-1"><i class="bi bi-dot"></i></button>
-                <button onclick="setOperator('equals')" type="button" class="btn btn-dark btn-width btn-lg m-1">=</button>
+                <button onclick="collectInput('percentage')" type="button" class="btn btn-dark btn-width btn-lg m-1">%</button>
+                <button onclick="collectInput(0)" type="button" class="btn btn-dark btn-width btn-lg m-1">0</button>
+                <button onclick="collectInput('dot')" type="button" class="btn btn-dark btn-width btn-lg m-1"><i class="bi bi-dot"></i></button>
+                <button onclick="calculateExpression()" type="button" class="btn btn-dark btn-width btn-lg m-1">=</button>
             </div>
         </section>
         

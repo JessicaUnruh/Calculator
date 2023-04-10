@@ -1,46 +1,46 @@
-// functionality for calculator:
-// add, subtract, multiply, divide, equals, clear, numbers, decimals
-// all can be used interchangeably
-// user can input number only
-// check for if input is number; if not they must re-enter the input
-var number = 0, numberButton, operationButton, result;
-function setNumber(input) {
+let numbers = [], operations = [], container = [], i = 0, t = 0, numberButton, operationButton, result = 0, displayWindow = document.getElementById("displayWindow");
+function collectInput(input) {
     console.log("pressed " + input);
-    console.log(typeof numberButton);
-    numberButton = input;
-    console.log(typeof numberButton);
+    container[i] = input;
+    displayWindow.innerText = container[i].toString();
+    console.log(container);
+    calculateExpression(container, i);
 }
-function setOperator(input) {
-    console.log("pressed " + input);
-    console.log(typeof operationButton);
-    operationButton = input;
-    console.log(typeof operationButton);
-}
-function caculateExpression(numberButton, operationButton) {
-    // result is what is saved
-    // new expression means result is 0
-    // continued expression means result is some number
-    // result == result + numberButton
-    // numberButton is pressed button with a number value
-    // say we have multiple values to add
-    // we need to add continuously as "Add" button is pressed
-    // 0 + 5 = 5 + 5 = 10 + 2 = 12, etc.
-    // r + nB = r + nB = r + nB = r, etc.
-    // we're taking in two parameters: numberButton and operationButton
-    // numberButton tells us what number to operate with
-    // operationButton tells us what to do with our numbers
-    switch (operationButton) {
-        case operationButton = "add":
-            result == number + numberButton;
-            console.log(result);
-        case operationButton = "subtract":
-            result == number - numberButton;
-            console.log(result);
-        case operationButton = "multiply":
-            result == number * numberButton;
-            console.log(result);
-        case operationButton = "divide":
-            result == number / numberButton;
-            console.log(result);
+function calculateExpression(container, pos) {
+    console.log("running calculateExpression");
+    console.log("container check: " + pos + " " + container[pos]);
+    console.log("typeof container pos " + typeof container[pos]);
+    if (typeof container[pos] == "number") {
+        if (typeof container[pos - 1] == "string") {
+            console.log("previous was string, continue on");
+        }
+        else if (pos != 0) {
+            container[pos] = Number(container[pos - 1].toString() + container[pos].toString());
+            console.log("new pos is " + container[pos] + " typeof " + typeof container[pos]);
+            console.log(container);
+            i++;
+            console.log("prev. value is " + container[pos - 1] + " and current value is " + container[pos]);
+        }
+    }
+    else if (typeof container[pos] == "string") {
+        switch (container[pos]) {
+            case "add":
+                console.log("starting add");
+                break;
+            case "subtract":
+                console.log("starting subtract");
+                break;
+            case "multiply":
+                console.log("starting multiply");
+                break;
+            case "divide":
+                console.log("starting divide");
+                break;
+        }
+    }
+    else {
+        console.log("else");
+        console.log(container[pos]);
     }
 }
+//# sourceMappingURL=calculator.js.map
